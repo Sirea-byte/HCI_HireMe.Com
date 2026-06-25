@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Saya - HireMe</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        if (sessionStorage.getItem('isLoggedIn') !== 'true' && sessionStorage.getItem('isBossLoggedIn') !== 'true') {
+            window.location.href = 'register-login.html';
+        }
+    </script>
+    <script src="script.js" defer></script>
+    <script src="profil.js" defer></script>
+</head>
+<body class="page-profil">
+    <div class="header">
+        <button class="logo-button" aria-label="About Us" title="About Us" role="link" 
+                tabindex="0" 
+                onclick="window.location.href='aboutus.html'"
+                onkeydown="if(event.key==='Enter'){window.location.href='aboutus.html'}"
+                style="cursor: pointer;">
+            <svg viewBox="0 0 340 230" style="width: 50px; height: auto; margin: 5px;">
+                <defs>
+                    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+                        <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000" flood-opacity="0.3"/>
+                    </filter>
+                </defs>
+                <rect width="100%" height="100%" fill="var(--background-primary)"/>
+                <polygon points="5,5 170,125 335,5 170,225" fill="#FFFFFF" filter="url(#shadow)"/>
+            </svg>
+        </button>
+       <p style="color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">HireMe.com</p>
+       <div class="settings-container">
+            <button class="gear-button" id="gearButton"  aria-label="Settings" title="Settings">
+                <svg class="gear-icon" viewBox="0 0 24 24">
+                    <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.49.49 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.07.63-.07.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6A3.6 3.6 0 1 1 12 8.4a3.6 3.6 0 0 1 0 7.2z"/>
+                </svg>
+            </button>
+            <div class="settings-panel" id="settingsPanel">
+                <h4 class="settings-title">Pengaturan</h4>
+
+                <label for="themeSelect" class="settings-label">Tema</label>
+                <select id="themeSelect" class="settings-select">
+                <option value="light">Terang</option>
+                <option value="dark">Gelap</option>
+                </select>
+
+                <label for="notifSelect" class="settings-label">Notifikasi Lowongan</label>
+                <select id="notifSelect" class="settings-select">
+                <option value="aktif">Aktif</option>
+                <option value="nonaktif">Nonaktif</option>
+                </select>
+
+                <label for="langSelect" class="settings-label">Bahasa</label>
+                <select id="langSelect" class="settings-select">
+                <option value="id">Indonesia</option>
+                <option value="en">English</option>
+                </select>
+
+            </div>
+        </div>
+    </div>
+    <div class="search-section" id="profil-container">
+    </div>
+</body>
+</html>
